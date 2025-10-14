@@ -23,9 +23,15 @@ const model = new ChatOpenAI({
 });
 
 // create a reusable prompt template
-const prompt = ChatPromptTemplate.fromTemplate(
+/*const prompt = ChatPromptTemplate.fromTemplate(
     "what are the cities in {country}?"
-);
+);*/
+
+// Create a prompt with multiple message roles
+const prompt = ChatPromptTemplate.fromMessages([
+  ["system", "You are a Finnish expert that specializes in geography."],
+  ["human", "What are three major cities in {country}?"]
+]);
 
 // create an output parser (to get clean text back)
 const outputParser = new StringOutputParser();
@@ -40,3 +46,25 @@ const result = await chain.invoke({
 
 console.log("The cities in Finland are: \n");
 console.log(result);
+
+
+//Batch example
+
+/*const inputs = [
+  { country: "Finland" },
+  { country: "Nigeria" },
+];*/
+
+/*const results = await chain.batch(inputs);
+
+console.log("The cities in Finland are: \n");
+console.log(results[0]);
+console.log("The cities in Nigeria are: \n");
+console.log(results[1]);*/
+
+//Streaming example
+/*const stream = await chain.stream({ country: "Finland" });
+
+for await (const chunk of stream) {
+  process.stdout.write(chunk); // shows text as it’s generated
+}*/
