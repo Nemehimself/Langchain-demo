@@ -19,9 +19,9 @@
   },
   "homepage": "https://github.com/Nemehimself/Langchain-demo#readme",
   "dependencies": {
+    "@langchain/community": "^0.3.57",
     "@langchain/core": "^0.3.78",
     "dotenv": "^17.2.3",
-    "langchain": "^0.3.36",
-    "pdf-parse": "^2.3.0"
+    "pdf-parse": "^1.1.1"
   }
 }
