@@ -20,6 +20,8 @@
 // console.log("Page loaded:", docs[0].metadata.title);
 // console.log(docs[0].pageContent.slice(0, 200));
 
+//Load a pdf file, split into chunks and print on the console
+
 import "dotenv/config";
 import { PDFLoader } from "@langchain/community/document_loaders/fs/pdf";
 import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
